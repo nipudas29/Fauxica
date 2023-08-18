@@ -1,15 +1,22 @@
-html {
-    font-size: 62.5%;
-}
-
-body {
-    margin: 0;
+*{
     font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color:transparent;
+    box-sizing: border-box; 
+    color: #000;
+    list-style-type: none;
+    text-decoration: none;
+}
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
 }
 
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 25px;
 }
 
 /* Navbar */
@@ -21,7 +28,7 @@ header {
 }
 
 nav {
-    margin: 4em;
+    margin: 4rem;
 }
 
 nav ul {
@@ -57,6 +64,12 @@ nav ul li a:before {
     bottom: -6px;
     transition: width .3s;
 }
+.menu-bar{
+    display: none;
+}
+.mobile-div{
+    display: none;
+}
 
 /* Hero Section */
 
@@ -73,7 +86,7 @@ main {
     flex-grow: 1;
 }
 
-h1 {
+.left-col h1 {
     font-size: 5.2rem;
     font-family: 'Playfair Display';
     font-weight: normal;
@@ -86,6 +99,9 @@ h1 {
 
 .cta-btns {
     margin: 5em 0;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .cta-btns, .secondary-cta {
@@ -101,6 +117,8 @@ h1 {
     text-decoration: none;
     border-radius: 1.9em;
     padding: 1em 2em;
+    display: flex;
+    align-items: center;
 }
 
 .secondary-cta {
@@ -108,7 +126,7 @@ h1 {
     text-decoration: none;
     color: black;
     display: block;
-    padding: 1em 0;
+    padding: 1em 2em;
 }
 
 .secondary-cta svg {
@@ -136,14 +154,14 @@ h1 {
     z-index: 2;
 }
 
-p.employees {
+.news .employees {
     font-size: 3.3rem;
     margin: 0;
     font-weight: 200;
     line-height: 100%;
 }
 
-p.details {
+.news .details {
     font-size: 1.4rem;
     margin: 0;
 }
@@ -271,5 +289,110 @@ main {
 @keyframes growIn {
     to {
         transform: scale(1);
+    }
+}
+
+/* media queries */
+@media(max-width:950px){
+    .wrapper{
+        padding: 0px;
+    }
+    header{
+        padding: 10px;
+        justify-content: space-between;
+        align-items: start;
+    }
+    nav ul{
+        display: none;
+    }
+    .mobile{
+        display: block;
+        cursor: pointer;
+        position: relative;
+    }
+    .menu-bar {
+        display: block;
+        cursor: pointer;
+    }
+    .menu-bar i{
+        font-size: 28px;
+    }
+    .mobile-div{
+        background: black;
+        width: 50%;
+        height: 30vh;
+        position: absolute;
+        right: 2px;
+        padding: 10px;
+        border-radius: 12px;
+        z-index: 99999;
+        display: none;
+        opacity: 0;
+        transition: .5s all ease-in-out;
+    }
+    .mobile-div.active {
+        display: block;
+        opacity: 1;
+    }
+    .mobile-div i{
+        color: #fff;
+        float: right;
+        font-size: 40px;
+        cursor: pointer;
+    }
+    .mobile-div ul{
+        margin-top: 40px;
+        padding: 10px;
+    }
+    .mobile-div ul li{
+        margin-bottom: 10px;
+    }
+    .mobile-div ul li a{
+        font-size: 20px;
+        color: #ffff;
+    }
+    main{
+        margin-top: 0rem;
+        overflow: hidden;
+        flex-direction: column;
+        margin-bottom: 12px;
+        /* justify-content: center; */
+        /* align-items: center; */
+    }
+    .wrapper {
+        max-width: 100%;
+        margin: 0;
+    }
+    .left-col {
+        padding: 10px;
+        width: 100%;
+    }
+    .left-col h1{
+        font-size: 3.5rem;
+    }
+    .subhead{
+        margin-top: 3rem;
+        font-size: 1.7rem;
+    }
+    .primary-cta{
+        font-size: 1.5rem;
+        font-weight:500;
+    }
+    .secondary-cta{
+        font-size: 1.5rem;
+    }
+
+    .news{
+        align-items: center;
+    }
+    .news::before{
+        top: 2px;
+        left: -2px;
+    }
+    .news .details{
+        font-size: 1.3rem;
+    }
+    .right-col{
+        padding: 2rem;
     }
 }
