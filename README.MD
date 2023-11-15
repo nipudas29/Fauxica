@@ -1,4 +1,4 @@
-A shopping website landing page 
+it is a shopping website landing page 
 
 ### Installation
 ```sh
